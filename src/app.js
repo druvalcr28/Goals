@@ -52,16 +52,6 @@ const Header = () => {
         </div> 
     );
 }
-/*class Header extends React.Component{
-    render(){
-        return (
-            <div>
-                <h1>Goals</h1>
-                <h2>Let's start it!</h2>
-            </div>
-        );
-    }
-}*/
 class Action extends React.Component{
     constructor(props){
         super(props);
