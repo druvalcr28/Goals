@@ -9,6 +9,24 @@ class Counter extends React.Component{
             count: 0 
         };
     }
+    componentDidMount(){
+        console.log("Mount");
+        try{
+            const json = localStorage.getItem('count');
+            if(json === "null"){
+                this.setState(() => ({ count: 0 }));
+            }
+            else{
+                this.setState(() => ({ count: parseInt(json,10) }));
+            }
+        }
+        catch(e){}
+    }
+    componentDidUpdate(prevProps, prevState){
+        console.log("Update");
+        const json = JSON.stringify(this.state.count);
+        localStorage.setItem('count',json);
+    }
     handleAddOne(){
         this.setState((preState) => {
             return{                         //returning an object.
@@ -16,7 +34,13 @@ class Counter extends React.Component{
             };
         });
     }
-    handleMinusOne(){}
+    handleMinusOne(){
+        this.setState((preState) => {
+            return{                         //returning an object.
+                count: preState.count - 1   //specify only that element which is to be changed.
+            };
+        });  
+    }
     handleReset(){
         this.setState((preState) => {
             return{                          
