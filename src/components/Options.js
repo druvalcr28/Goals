@@ -1,7 +1,7 @@
 import React from 'react';
 import Option from './Option';
 
-const Options = (props) => {
+/*const Options = (props) => {
     return (
         <div>
             <p>No.of Options : {props.options.length}</p>
@@ -13,6 +13,18 @@ const Options = (props) => {
             </ol>
         </div>
     );
-}
+}*/
+//Both notations can be used in case of stateless functional components
+const Options = (props) => (
+    <div>
+        <p>No.of Options : {props.options.length}</p>
+        <button onClick={props.handleRemoveAll}>Remove All</button>
+        <ol>
+            {
+                props.options.map( (item,index) => <Option key={item} title={item} handleRemoveItem={props.handleRemoveItem} /> )
+            }
+        </ol>
+    </div>
+);
 
 export {Options as default};
