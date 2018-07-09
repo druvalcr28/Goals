@@ -57,10 +57,14 @@ export default class TodoApp extends React.Component{
         return(
             <div>
                 <Header />
-                <Action length={this.state.options.length} getRandItem={this.getRandItem}/>
-                <Options options={this.state.options} handleRemoveAll={this.handleRemoveAll} handleRemoveItem={this.handleRemoveItem}/>
+                <div className="container">
+                    <Action length={this.state.options.length} getRandItem={this.getRandItem}/>
+                    <div className="widget">
+                        <Options options={this.state.options} handleRemoveAll={this.handleRemoveAll} handleRemoveItem={this.handleRemoveItem}/>
+                        <AddOption handleAddOption={this.handleAddOption}/>
+                    </div>
+                </div>
                 <OptionModal selectedOption={this.state.selectedOption} clearSelectedOption={this.clearSelectedOption} />
-                <AddOption handleAddOption={this.handleAddOption}/>
             </div>
         );
     }

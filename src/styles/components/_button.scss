@@ -1,0 +1,29 @@
+.big-button{
+    background: $orange-color;
+    border: none;
+    border-bottom: 0.6rem solid darken($color: $orange-color, $amount: 10%);
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: $l-size;
+    margin-bottom: $l-size;
+    width: 100%;
+    padding: 2.4rem;
+}
+.big-button:disabled{
+    opacity: 0.8;
+}
+
+.button{
+    background: $blue-color;
+    border: none;
+    border-bottom: 0.3rem solid darken($color: $blue-color, $amount: 10%);
+    color:#ffffff;
+    font-weight: 500;
+    padding: 1.0rem;
+}
+
+.button--link{
+    border:none;
+    color: #000000;
+    padding: 0;
+}
