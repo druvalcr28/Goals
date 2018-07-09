@@ -64,7 +64,7 @@ export default class TodoApp extends React.Component{
                         <AddOption handleAddOption={this.handleAddOption}/>
                     </div>
                 </div>
-                <div className="widget-modal">
+                <div>
                     <OptionModal selectedOption={this.state.selectedOption} clearSelectedOption={this.clearSelectedOption} />
                 </div>
             </div>
